@@ -2,6 +2,14 @@
 
 @main("Welcome to Play 2.0") {
     
-    @play20.welcome(message, style = "Java")
+     @message.toUpperCase
+
+    @helper.form(action = routes.ProductController.addProduct()) {
+        Name : <input name="name"/>
+        Description : <input name="description"/>
+        Bar Code : <input name="bar_code"/>
+        Price : <input name="price"/>
+        <input type="submit"/>
+    }
     
 }
