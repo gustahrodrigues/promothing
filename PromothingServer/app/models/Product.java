@@ -1,7 +1,10 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -10,8 +13,8 @@ public class Product extends Model {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-    public String id;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    public long id;
 
 	@Constraints.Required
 	public String name;
@@ -19,7 +22,7 @@ public class Product extends Model {
 	public String bar_code;
 	public double price;	
 	
-	public static Finder<String,Product> find = new Finder<String,Product>(String.class, Product.class);
+	public static Finder<Long,Product> find = new Finder<Long,Product>(Long.class, Product.class);
 		
 	@Override
 	public String toString() {

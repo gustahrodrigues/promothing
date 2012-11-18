@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table product (
-  id                        varchar(255) not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   description               varchar(255),
   bar_code                  varchar(255),
@@ -12,18 +12,14 @@ create table product (
   constraint pk_product primary key (id))
 ;
 
-create sequence product_seq;
-
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists product;
+drop table product;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists product_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
