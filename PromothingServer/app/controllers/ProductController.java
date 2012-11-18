@@ -29,7 +29,7 @@ public class ProductController extends Controller {
 		return ok(toJson(Product.find.all()));
 	}
 
-	public static Result getProduct(long id){
+	public static Result getProduct(Long id){
 		Product product = Product.find.byId(id);
 
 		if(product == null){
@@ -39,7 +39,7 @@ public class ProductController extends Controller {
 		return ok(toJson(product));
 	}
 	
-	public static Result deleteProduct(long id){
+	public static Result deleteProduct(Long id){
 		Product product = Product.find.byId(id);
 
 		if(product == null){

@@ -14,7 +14,7 @@ public class Product extends Model {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    public long id;
+    public Long id;
 
 	@Constraints.Required
 	public String name;
